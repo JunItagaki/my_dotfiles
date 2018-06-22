@@ -75,6 +75,3 @@ alias ls='ls -l'
 alias gitb='git branch'
 alias gitc='git checkout'
 alias gits='git status'
-
-alias cdnex='cd /Users/itagakijun/desktop/projects/Nexceed'
-alias cdtachi='cd /Users/itagakijun/desktop/projects/Nexceed/立川商店'
