@@ -67,14 +67,14 @@ alias rc='rails c'
 alias bers='bundle exec rails s'
 alias bers='bundle exec rails c'
 
-alias vimba='vim ~/.dotfiles/.bashrc'
-alias vimzsh='vim ~/.dotfiles/.zshrc'
+alias vimb='vim ~/.dotfiles/.bashrc'
+alias vimz='vim ~/.dotfiles/.zshrc'
 
 alias ls='ls -l'
 
-alias gitbr='git branch'
-alias gitch='git checkout'
-alias gitst='git status'
+alias gitb='git branch'
+alias gitc='git checkout'
+alias gits='git status'
 
 alias cdnex='cd /Users/itagakijun/desktop/projects/Nexceed'
 alias cdtachi='cd /Users/itagakijun/desktop/projects/Nexceed/立川商店'
