@@ -62,20 +62,33 @@ setopt correct
 setopt no_beep
 
 # プロンプト表示
-setopt prompt_subst
-# 時間表示
-precmd () {
-  LANG=en_US.UTF-8 vcs_info
-  LOADAVG=$(sysctl -n vm.loadavg | perl -anpe '$_=$F[1]')
-  PROMPT='${vcs_info_msg_0_}%{${fg[blue]}%}%* ($LOADAVG) %%%{$reset_color%} '
-}
-# Directory表示
-RPROMPT='%{${fg[green]}%}%/%{$reset_color%}'
-# branch表示
 autoload -Uz vcs_info
-zstyle ':vcs_info:*' enable git svn
-zstyle ':vcs_info:*' formats '%{'${fg[white]}'%}[%s %b] %{'$reset_color'%}'
+zstyle ':vcs_info:*' formats '[%b]'
+zstyle ':vcs_info:*' actionformats '[%b|%a]'
+# ユーザ名@ホスト名
+PROMPT='%n@%m %# '
+# 現在時刻
+RPROMPT=$'%{\e[38;5;251m%}%D{%b %d}, %*%{\e[m%}'
+TRAPALRM() {
+  zle reset-prompt
+}
+precmd () {
+  # 1行あける
+  print
+  # カレントディレクトリ
+  local right=' %{\e[38;5;2m%}[%~]%{\e[m%}'
+  # バージョン管理されてた場合、ブランチ名
+  vcs_info
+  local left="%{\e[38;5;32m%}${vcs_info_msg_0_}%{\e[m%}"
+  # スペースの長さを計算
+  # テキストを装飾する場合、エスケープシーケンスをカウントしないようにします
+  local invisible='%([BSUbfksu]|([FK]|){*})'
+  local leftwidth=${#${(S%%)left//$~invisible/}}
+  local rightwidth=${#${(S%%)right//$~invisible/}}
+  local padwidth=$(($COLUMNS - ($leftwidth + $rightwidth) % $COLUMNS))
 
+  print -P $left${(r:$padwidth:: :)}$right
+}
 
 
 # cd した先のディレクトリをディレクトリスタックに追加する
