@@ -76,7 +76,7 @@ precmd () {
   # 1行あける
   print
   # カレントディレクトリ
-  local right=' %{\e[38;5;2m%}[%~]%{\e[m%}'
+  local right=' %{\e[38;5;2m%} %~ %{\e[m%}'
   # バージョン管理されてた場合、ブランチ名
   vcs_info
   local left="%{\e[38;5;32m%}${vcs_info_msg_0_}%{\e[m%}"
