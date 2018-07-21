@@ -46,10 +46,6 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 # 補完候補を詰めて表示
 setopt list_packed
-
-#補完機能を有効にする
-autoload -Uz compinit
-compinit
  
 #補完のリストの、選択している部分を塗りつぶす
 zstyle ':completion:*' menu select
