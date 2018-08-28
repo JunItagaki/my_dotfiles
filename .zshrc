@@ -34,6 +34,32 @@ zle -N history-beginning-search-forward-end history-search-end
 bindkey "^p" history-beginning-search-backward-end
 bindkey "^b" history-beginning-search-forward-end
 
+----------------------------------------------------------------------------------
+
+# zplug settings
+export ZPLUG_HOME=/usr/local/opt/zplug
+source $ZPLUG_HOME/init.zsh
+
+# plugins
+zplug "plugins/git", from:oh-my-zsh
+zplug "zsh-users/zsh-autosuggestions"
+zplug "mafredri/zsh-async", from:github
+zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
+zplug "zsh-users/zsh-syntax-highlighting"
+
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+# Then, source plugins and add commands to $PATH
+zplug load --verbose
+
+------------------------------------------------------------------------------------
+
 # 補完機能を有効にする
 autoload -Uz compinit
 compinit -u
@@ -63,37 +89,6 @@ setopt hist_ignore_space
 setopt correct
 # ビープ音を鳴らさない
 setopt no_beep
-
-# プロンプト表示
-autoload -Uz vcs_info
-zstyle ':vcs_info:*' formats '[%b]'
-zstyle ':vcs_info:*' actionformats '[%b|%a]'
-# ユーザ名@ホスト名
-PROMPT='%n@%m %# '
-# 現在時刻
-RPROMPT=$'%{\e[38;5;251m%}%D{%b %d}, %*%{\e[m%}'
-TRAPALRM() {
-  zle reset-prompt
-}
-precmd () {
-  # 1行あける
-  print
-  # カレントディレクトリ
-  local right=' %{\e[38;5;2m%} %~ %{\e[m%}'
-  # バージョン管理されてた場合、ブランチ名
-  vcs_info
-  local left="%{\e[38;5;32m%}${vcs_info_msg_0_}%{\e[m%}"
-  # スペースの長さを計算
-  # テキストを装飾する場合、エスケープシーケンスをカウントしないようにします
-  local invisible='%([BSUbfksu]|([FK]|){*})'
-  local leftwidth=${#${(S%%)left//$~invisible/}}
-  local rightwidth=${#${(S%%)right//$~invisible/}}
-  local padwidth=$(($COLUMNS - ($leftwidth + $rightwidth) % $COLUMNS))
-
-  print -P $left${(r:$padwidth:: :)}$right
-}
-
-
 # cd した先のディレクトリをディレクトリスタックに追加する
 # ディレクトリスタックとは今までに行ったディレクトリの履歴のこと
 # `cd +<Tab>` でディレクトリの履歴が表示され、そこに移動できる
