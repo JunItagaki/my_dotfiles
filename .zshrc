@@ -122,3 +122,7 @@ alias ls='ls -l'
 alias gitb='git branch'
 alias gitc='git checkout'
 alias gits='git status'
+
+# direnv
+export EDITOR=vim
+eval "$(direnv hook zsh)"
