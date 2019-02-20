@@ -2,16 +2,16 @@
     "editor.tabSize": 2,
     "editor.renderWhitespace":true, // スペースの表示
     "team.showWelcomeMessage": false,
-    "workbench.colorTheme": "dark-plus-syntax",
     // minimap無効化,
     "editor.minimap.enabled": false,
     // エディターでインデントのガイドを表示する必要があるかどうかを制御します
     "editor.renderIndentGuides": true,
     "json.trace.server": "messages",
-    "workbench.iconTheme": "vscode-great-icons",
-    "terminal.integrated.shell.osx": "/usr/local/bin/zsh"
+    "terminal.integrated.shell.osx": "/usr/local/bin/zsh",
+    "gitlens.advanced.messages": {
+        "suppressShowKeyBindingsNotice": true
+    },
+    "workbench.colorTheme": "Dobri Next -C06- Ayu",
+    "workbench.iconTheme": "material-icon-theme",
+    "window.zoomLevel": -1
 }
-
-"[slim]":  {
-    "editor.tabSize": 2
-  }

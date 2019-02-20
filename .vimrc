@@ -42,6 +42,8 @@ set expandtab
 set tabstop=2
 " 行頭でのTab文字の表示幅
 set shiftwidth=2
+" 改行時に前の行のインデントを継続する
+set autoindent
 
 
 " 検索系
