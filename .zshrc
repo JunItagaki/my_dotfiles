@@ -126,5 +126,3 @@ alias gits='git status'
 # direnv
 export EDITOR=vim
 eval "$(direnv hook zsh)"
-
-eval "$(direnv hook zsh)"
