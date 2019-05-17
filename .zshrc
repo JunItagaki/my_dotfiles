@@ -48,12 +48,12 @@ zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
 zplug "zsh-users/zsh-syntax-highlighting"
 
 # Install plugins if there are plugins that have not been installed
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
-fi
+# if ! zplug check --verbose; then
+#     printf "Install? [y/N]: "
+#     if read -q; then
+#         echo; zplug install
+#     fi
+# fi
 
 # Then, source plugins and add commands to $PATH
 zplug load --verbose
@@ -95,12 +95,6 @@ setopt no_beep
 setopt auto_pushd
 
 #alias
-alias cdru='cd /Users/itagakijun/desktop/projects/private/Ruby'
-alias cdpy='cd /Users/itagakijun/desktop/projects/private/Python'
-alias cdpro='cd /Users/itagakijun/desktop/projects'
-alias cdrails='cd /Users/itagakijun/Desktop/projects/private/Rails'
-alias cdpri='cd /Users/itagakijun/Desktop/projects/private'
-
 alias be='bundle exec'
 alias bi='bundle install'
 alias bemi='bundle exec rake db:migrate'
@@ -118,6 +112,7 @@ alias vimb='vim ~/.dotfiles/.bashrc'
 alias vimz='vim ~/.dotfiles/.zshrc'
 
 alias ls='ls -l'
+alias la="ls -a"
 
 alias gitb='git branch'
 alias gitc='git checkout'

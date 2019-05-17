@@ -11,7 +11,8 @@
     "gitlens.advanced.messages": {
         "suppressShowKeyBindingsNotice": true
     },
-    "workbench.colorTheme": "Dobri Next -C06- Ayu",
     "workbench.iconTheme": "material-icon-theme",
-    "window.zoomLevel": -1
+    "window.zoomLevel": -1,
+    "workbench.colorTheme": "Cobalt2",
+    "materialTheme.fixIconsRunning": false
 }
