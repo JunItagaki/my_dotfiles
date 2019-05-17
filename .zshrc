@@ -27,13 +27,6 @@ setopt histignorealldups
 # 同時に起動したzshの間でヒストリを共有
 setopt share_history
 
-#入力途中の履歴補完を有効化する
-autoload -Uz history-search-end
-zle -N history-beginning-search-backward-end history-search-end
-zle -N history-beginning-search-forward-end history-search-end
-bindkey "^p" history-beginning-search-backward-end
-bindkey "^b" history-beginning-search-forward-end
-
 ----------------------------------------------------------------------------------
 
 # zplug settings
@@ -42,6 +35,7 @@ source $ZPLUG_HOME/init.zsh
 
 # plugins
 zplug "plugins/git", from:oh-my-zsh
+zplug "plugins/zsh_reload", from:oh-my-zsh
 zplug "zsh-users/zsh-autosuggestions"
 zplug "mafredri/zsh-async", from:github
 zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
