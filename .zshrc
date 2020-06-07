@@ -115,4 +115,11 @@ alias gits='git status'
 # direnv
 export EDITOR=vim
 eval "$(direnv hook zsh)"
+
+# node.js
 export PATH=$HOME/.nodebrew/current/bin:$PATH
+
+# rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
