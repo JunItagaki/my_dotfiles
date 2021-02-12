@@ -132,3 +132,9 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/hatafull/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/hatafull/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/hatafull/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/hatafull/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
