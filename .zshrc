@@ -27,6 +27,17 @@ setopt histignorealldups
 # 同時に起動したzshの間でヒストリを共有
 setopt share_history
 
+# Githubアカウント切り替え
+function gitmain() {
+  git config --global user.name "$GITHUB_MAIN_ACOUNT_NAME"
+  git config --global user.email "$GITHUB_MAIN_ACOUNT_MAIL"
+}
+
+function gitwork() {
+  git config --global user.name "$GITHUB_WORK_ACOUNT_NAME"
+  git config --global user.email "$GITHUB_WORK_ACOUNT_MAIL"
+}
+
 ----------------------------------------------------------------------------------
 
 # zplug settings

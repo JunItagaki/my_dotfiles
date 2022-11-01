@@ -1,11 +1,9 @@
 {
     "editor.tabSize": 2,
-    "editor.renderWhitespace":true, // スペースの表示
+    "editor.renderWhitespace":"boundary", // スペースの表示
     "team.showWelcomeMessage": false,
     // minimap無効化,
     "editor.minimap.enabled": false,
-    // エディターでインデントのガイドを表示する必要があるかどうかを制御します
-    "editor.renderIndentGuides": true,
     "json.trace.server": "messages",
     "terminal.integrated.shell.osx": "/usr/local/bin/zsh",
     "gitlens.advanced.messages": {
@@ -24,5 +22,6 @@
     "javascript.updateImportsOnFileMove.enabled": "always",
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
-    "editor.formatOnType": true
+    "editor.formatOnType": true,
+    "editor.guides.indentation": true
 }
