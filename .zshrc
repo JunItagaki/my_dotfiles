@@ -28,11 +28,12 @@ setopt histignorealldups
 setopt share_history
 
 # Githubアカウント切り替え
+# Githubメインアカウント
 function gitmain() {
   git config --global user.name "$GITHUB_MAIN_ACOUNT_NAME"
   git config --global user.email "$GITHUB_MAIN_ACOUNT_MAIL"
 }
-
+# Githun仕事用アカウント
 function gitwork() {
   git config --global user.name "$GITHUB_WORK_ACOUNT_NAME"
   git config --global user.email "$GITHUB_WORK_ACOUNT_MAIL"
