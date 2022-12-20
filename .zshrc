@@ -32,11 +32,13 @@ setopt share_history
 function gitmain() {
   git config --global user.name "$GITHUB_MAIN_ACOUNT_NAME"
   git config --global user.email "$GITHUB_MAIN_ACOUNT_MAIL"
+  source ~/.zshrc
 }
 # Githun仕事用アカウント
 function gitwork() {
   git config --global user.name "$GITHUB_WORK_ACOUNT_NAME"
   git config --global user.email "$GITHUB_WORK_ACOUNT_MAIL"
+  source ~/.zshrc
 }
 
 ----------------------------------------------------------------------------------
