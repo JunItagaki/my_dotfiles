@@ -149,7 +149,9 @@ eval "$(pyenv init -)"
 
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/hatafull/Projects/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/hatafull/Projects/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/Users/MEGURI/Projects/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/MEGURI/Projects/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/hatafull/Projects/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/hatafull/Projects/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '/Users/MEGURI/Projects/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/MEGURI/Projects/google-cloud-sdk/completion.zsh.inc'; fi
+
+source /Users/MEGURI/.docker/init-zsh.sh || true # Added by Docker Desktop
